@@ -38,7 +38,7 @@ function_verify () {
 
 function_versaoatt () {
 apt-get install curl -y > /dev/null 2>&1
-v1=$(curl -sSL "https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/versaoatt")
+v1=$(curl -sSL "${GitRaw}/${GitUser}/main/Install/versaoatt")
 echo "$v1" > /etc/adm-lite/versao_script
 echo > /usr/bin/adm-ultimate && chmod +x /usr/bin/adm-ultimate
 }
@@ -74,6 +74,7 @@ cd /etc/adm-lite
 touch /etc/adm-lite/index.html
 function_versaoatt
 wget -i $HOME/lista -o /dev/null
+wget -O /etc/adm-lite/idioma ${GitRaw}/${GitUser}/main/Install/Idioma/${id}/idioma &> /dev/null
 echo -e "${cor[3]} $(source trans -b pt:${id} "Agora Sera Instalado As Dependencias")"
 echo -e "$barra"
 cd /etc/adm-lite
