@@ -1,5 +1,7 @@
 #!/bin/bash
 barra="\033[0;34m===================================\033[1;37m"
+#15/03/2021
+GitUser="ThonyDroidYT/ADM-MANAGER-ALPHA-PRO"
 
 fun_bar () {
 comando[0]="$1"
@@ -144,5 +146,6 @@ echo -e "$barra"
 echo -e "${cor[3]} $(source trans -b pt:${id} "Iniciando Instalação...")"
 echo -e "$barra"
 echo -ne "${cor[4]}"
-wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
+#wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
+wget -O lista https://raw.githubusercontent.com/${GitUser}/main/Install/lista -o /dev/null
 valid_fun
