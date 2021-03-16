@@ -1,5 +1,6 @@
 #!/bin/bash
-barra="\033[0;34m ===================================\033[1;37m"
+#barra="\033[0;34m ===================================\033[1;37m"
+barra="${cor[1]}  ===================================\033[1;37m"
 [[ $1 != "" ]] && id="$1" || id="pt"
 SCPdir="/etc/adm-lite"
 
@@ -415,22 +416,22 @@ rm /tmp/portz
 instala_ovpn () {
 parametros_iniciais () {
 #Verifica o Sistema
-[[ "$EUID" -ne 0 ]] && echo "Desculpe, você precisa rodar isso como root" && return 1
-[[ ! -e /dev/net/tun ]] && echo "TUN não está disponível" && return 1
+[[ "$EUID" -ne 0 ]] && echo "Desculpe, vocÃª precisa rodar isso como root" && return 1
+[[ ! -e /dev/net/tun ]] && echo "TUN nÃ£o estÃ¡ disponÃ­vel" && return 1
 if [[ -e /etc/debian_version ]]; then
 OS="debian"
 VERSION_ID=$(cat /etc/os-release | grep "VERSION_ID")
 IPTABLES='/etc/iptables/iptables.rules'
 SYSCTL='/etc/sysctl.conf'
  [[ "$VERSION_ID" != 'VERSION_ID="7"' ]] && [[ "$VERSION_ID" != 'VERSION_ID="8"' ]] && [[ "$VERSION_ID" != 'VERSION_ID="9"' ]] && [[ "$VERSION_ID" != 'VERSION_ID="14.04"' ]] && [[ "$VERSION_ID" != 'VERSION_ID="16.04"' ]] && [[ "$VERSION_ID" != 'VERSION_ID="17.10"' ]] && {
- echo " Sua versão do Debian / Ubuntu não é suportada."
+ echo " Sua versÃ£o do Debian / Ubuntu nÃ£o Ã© suportada."
  while [[ $CONTINUE != @(y|Y|s|S|n|N) ]]; do
  read -p "Continuar ? [y/n]: " -e CONTINUE
  done
  [[ "$CONTINUE" = @(n|N) ]] && return 2
  }
 else
-echo -e "$barra\n\033[1;33m $(fun_trans "Parece que você não está executando este instalador em um sistema Debian ou Ubuntu")\n$barra"
+echo -e "$barra\n\033[1;33m $(fun_trans "Parece que vocÃª nÃ£o estÃ¡ executando este instalador em um sistema Debian ou Ubuntu")\n$barra"
 return 1
 fi
 #Pega Interface
@@ -462,7 +463,7 @@ echo -ne " $(fun_trans "Confirme seu ip")"; read -p ": " -e -i $IP ip
 echo -e "$barra\n\033[1;33m$(fun_trans "Qual porta voce deseja usar?")\033[0m\n$barra"
 read -p "Port: " -e -i 1194 PORT
 echo -e "\033[1;31m$(fun_trans "Qual protocolo voce deseja para as conexoes OPENVPN?")"
-echo -e "\033[1;31m$(fun_trans "A menos que o UDP esteja bloqueado, você não deve usar o TCP (mais lento)")"
+echo -e "\033[1;31m$(fun_trans "A menos que o UDP esteja bloqueado, vocÃª nÃ£o deve usar o TCP (mais lento)")"
 #PROTOCOLO
 while [[ $PROTOCOL != @(UDP|TCP) ]]; do
 read -p "Protocol [UDP/TCP]: " -e -i TCP PROTOCOL
@@ -471,7 +472,7 @@ done
 [[ $PROTOCOL = "TCP" ]] && PROTOCOL=tcp
 #DNS
 echo -e "$barra\n\033[1;33m$(fun_trans "Qual DNS voce deseja usar?")\n$barra"
-echo "   1) Usar padrões do sistema "
+echo "   1) Usar padrÃµes do sistema "
 echo "   2) Cloudflare"
 echo "   3) Quad"
 echo "   4) FDN"
@@ -484,7 +485,7 @@ while [[ $DNS != @(1|2|3|4|5|6|7|8|9) ]]; do
 read -p "DNS [1-9]: " -e -i 1 DNS
 done
 #CIPHER
-echo -e "$barra\n\033[1;33m$(fun_trans "Escolha qual codificação você deseja usar para o canal de dados:")\n$barra"
+echo -e "$barra\n\033[1;33m$(fun_trans "Escolha qual codificaÃ§Ã£o vocÃª deseja usar para o canal de dados:")\n$barra"
 echo "   1) AES-128-CBC"
 echo "   2) AES-192-CBC"
 echo "   3) AES-256-CBC"
@@ -508,8 +509,8 @@ echo -e "$barra\n\033[1;33m$(fun_trans "Estamos prontos para configurar seu serv
 read -n1 -r -p "Enter to Continue..."
 }
 parametros_iniciais # BREVE VERIFICACAO
-coleta_variaveis # COLETA VARIAVEIS PARA INSTALAÇÃO
-add_repo # ATUALIZA REPOSITÓRIO OPENVPN E INSTALA OPENVPN
+coleta_variaveis # COLETA VARIAVEIS PARA INSTALAÃ‡ÃƒO
+add_repo # ATUALIZA REPOSITÃ“RIO OPENVPN E INSTALA OPENVPN
 # Cria Diretorio
 [[ ! -d /etc/openvpn ]] && mkdir /etc/openvpn
 # Install openvpn
@@ -1034,7 +1035,7 @@ unset tcpbypass
 [[ -e /etc/adm-lite/gettun ]] && gettun="\033[1;32m$(fun_trans "Online")"
 [[ -e /etc/adm-lite/edbypass ]] && tcpbypass="\033[1;32m$(fun_trans "Online")"
 echo -e "$barra"
-echo -e "\033[1;31m $(fun_trans "MENU INSTALAÃ‡ÃƒO")"
+echo -e "\033[1;31m $(fun_trans "MENU INSTALAÃƒÂ‡ÃƒÂƒO")"
 echo -e "$barra"
 echo -e "${cor[2]} |0| >${cor[4]} [ $(fun_trans "VOLTAR / SAIR") ]"
 echo -e "${cor[2]} |1| >${cor[3]} $(fun_trans "CONFIGURAR") SQUID $squid"
