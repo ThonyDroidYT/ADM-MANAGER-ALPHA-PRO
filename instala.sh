@@ -34,9 +34,9 @@ echo -e "${cor[2} $(source trans -b pt:${id} "Agregar Un Nickname")?"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[2]} $(source trans -b pt:${id} "De 06-08 Coracteres Recomendados")"
-    read -p "Nick: 》" nick
-    echo -e "$nick" >> /etc/adm-lite/nick
-    chmod 777 /etc/adm-lite/nick
+read -p "Nick: 》" nick
+echo -e "$nick" >> /etc/adm-lite/nick
+chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
 echo -e "${cor[4]} $(source trans -b pt:${id} "Ningún Nickname")"
 exit 0
