@@ -34,7 +34,7 @@ echo -e "${cor[5]} $(source trans -b pt:${id} "Desea agregar un Apodo?")"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
-read -p "Nick: 》" nick
+read -p " Nick: 》" nick
 echo -e "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
