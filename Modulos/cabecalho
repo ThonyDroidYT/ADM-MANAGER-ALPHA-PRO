@@ -60,19 +60,18 @@ service apache2 restart > /dev/null 2>&1
 [[ "/etc/adm-lite/Nick" ]] && rm /etc/adm-lite/nick
 echo -e "${cor[2} $(source trans -b pt:${id} "Agregar Un Nickname")?"
 read -p " [ s / n ]: " addnick
-[[ "$addnick" = @(s|S|y|Y) ]] && {
-echo -e "${cor[2]} $(source trans -b pt:${id} "De 06-08 Coracteres Recomendados")"
-read -p "Nick: 》" nick
-echo -e "$nick" >> /etc/adm-lite/nick
-chmod 777 /etc/adm-lite/nick
-echo -e "${cor[4]} $(source trans -b pt:${id} "Ningún Nickname")"
-  }
 }
     [[ "$1" = "--instalar" ]] && {
     instalar_fun
     exit 0
     }
-
+    [[ "$addnick" = @(s|S|y|Y) ]] && {
+    echo -e "${cor[2]} $(source trans -b pt:${id} "De 06-08 Coracteres Recomendados")"
+    read -p "Nick: 》" nick
+    echo -e "$nick" >> /etc/adm-lite/nick
+    chmod 777 /etc/adm-lite/nick || echo -e "${cor[4]} $(source trans -b pt:${id} "Ningún Nickname")"
+    exit 0
+    }
 remover_adm () {
 echo -e "${cor[1]} =================================== ${cor[0]}"
 echo -e "${cor[5]} ${txt[209]}"
