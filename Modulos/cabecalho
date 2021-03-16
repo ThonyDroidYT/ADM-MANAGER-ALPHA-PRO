@@ -59,7 +59,7 @@ sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
 [[ "/
 echo -e "${cor[2} $(source trans -b pt:${id} "Agregar Un Nickname")?"
-read -p "[S/N]: 》" addnick
+read -p " [ s / n ]: " addnick
      [[ "$addnick" = @(s|S|y|Y) ]] && {
      echo -e "${cor[2]} $(source trans -b pt:${id} "De [06-08] Coracteres Recomendados")"
      read -p "Nick: 》" nick
