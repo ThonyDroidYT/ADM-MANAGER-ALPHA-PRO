@@ -1,4 +1,4 @@
-﻿# ADM-MANAGER-ULTIMATE (VERSION: ALPHA)
+﻿# ADM-MANAGER-ULTIMATE (VERSION: ALPHA-PRO)
 * UPDATE 03/01/2021
 
 ![logo](https://github.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/blob/main/Imagenes/ADM_MANAGER_ULTIMATE.jpg)
@@ -14,7 +14,7 @@
 
 ## :book: Installation
 
-apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/instala.sh; chmod 777 instala.sh* && ./instala.sh*
+apt-get update -y; apt-get upgrade -y; wget https://raw.githubusercontent.com/ThonyDroidYT/ADM-MANAGER-ALPHA-PRO/main/instala.sh; chmod 777 instala.sh* && ./instala.sh*
 
 -------------------------------------------------------------------------------
 
