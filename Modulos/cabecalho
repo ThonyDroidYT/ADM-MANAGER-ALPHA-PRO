@@ -58,8 +58,8 @@ fun_bar 'apt-get install lynx' 'apt-get install curl'
 sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
 echo -e "${cor[2}$(fun_trans "Agrega Un Nick")"
-read -p "[S/N]: 》" nick
-[[ "$nick" = @(s|S|y|Y) ]] && echo -e "$nick" >> /etc/adm-lite/nick && chmod 777 /etc/adm-lite/nick
+read -p "[S/N]: 》" addnick
+[[ "$addnick" = @(s|S|y|Y) ]] && echo -e "${cor[2]} De [06-08] Coracteres Recomendados" && read -p "Nick: 》" nick && echo -e "$nick" >> /etc/adm-lite/nick && chmod 777 /etc/adm-lite/nick || echo -e "${cor[4]} Ningún Nick"
 }
     [[ "$1" = "--instalar" ]] && {
     instalar_fun
