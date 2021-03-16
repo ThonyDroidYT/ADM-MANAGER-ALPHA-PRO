@@ -35,10 +35,9 @@ read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[5]} $(source trans -b es:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
 read -p " Nick: 》" nick
-touch /etc/adm-lite/nick
 echo "$nick" > /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
-echo -e "${cor[4]} $(source trans -b es:${id} "Apodo $(cat /etc/adm-lite/nick) correctamente agregado")!\033[0m"
+[[ -e /etc/adm-lite/nick ]] && echo -e "${cor[4]} $(source trans -b es:${id} "Apodo $(cat /etc/adm-lite/nick) correctamente agregado")!\033[0m" || echo -e "\e[1;31m $(source trans -b es:${id} "Falla al Agregar Apodo")!\033[0m"
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
 echo -e "${cor[4]} $(source trans -b es:$id "Ningún Apodo Agregado")!"
 fi
