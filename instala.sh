@@ -30,16 +30,16 @@ echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 add_nick () {
 [[ -e /etc/adm-lite/nick ]] && rm /etc/adm-lite/nick
 echo -e "${barra}"
-echo -e "${cor[5]} $(source trans -b pt:${id} "Desea agregar un Apodo?")"
+echo -e "${cor[5]} $(source trans -b es:${id} "Desea agregar un Apodo?")"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
-echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
+echo -e "${cor[5]} $(source trans -b es:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
 read -p " Nick: 》" nick
 echo "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 echo -e "${cor[4]} $(source trans -b pt:${id} "Apodo Agregado Correctamente")!\033[0m"
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
-echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Apodo Escrito")!"
+echo -e "${cor[4]} $(source trans -b es:$id "Ningún Apodo Agregado")!"
 fi
 }
 instalar_fun () {
