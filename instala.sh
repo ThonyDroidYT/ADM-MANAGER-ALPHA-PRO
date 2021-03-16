@@ -29,7 +29,7 @@ echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 }
 
 instalar_fun () {
-[[ "/etc/adm-lite/Nick" ]] && rm /etc/adm-lite/nick
+[[ -e /etc/adm-lite/Nick ]] && rm /etc/adm-lite/nick
 echo -e "${cor[2} $(source trans -b pt:${id} "Agregar Un Nickname")?"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
@@ -38,7 +38,7 @@ read -p "Nick: 》" nick
 echo -e "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
-echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Nickname")"
+echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Nickname")!"
 fi
 cd /etc/adm-lite && bash cabecalho --instalar
 }
