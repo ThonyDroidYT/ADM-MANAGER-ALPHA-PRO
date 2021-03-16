@@ -37,7 +37,7 @@ echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Apodo de 06-08 Caracte
 read -p " Nick: 》" nick
 echo "${nick}" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
-echo -e "${cor[4]} $(source trans -b pt:${id}"Apodo Agregado Correctamente!")\033[0m"
+echo -e "${cor[4]} $(source trans -b pt:${id} "Apodo ${nick} Agregado Correctamente!")\033[0m"
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
 echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Apodo Escrito")!"
 fi
