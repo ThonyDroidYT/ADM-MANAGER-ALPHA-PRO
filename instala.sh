@@ -35,7 +35,7 @@ read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[5]} $(source trans -b es:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
 read -p " Nick: 》" nick
-echo "$nick" > /etc/adm-lite/nick
+echo "$nick" >> /etc/adm-lite/nick
 chmod x+ /etc/adm-lite/nick
 [[ -e /etc/adm-lite/nick ]] && echo -e "${cor[4]} $(source trans -b es:${id} "Apodo $(cat /etc/adm-lite/nick) agregado correctamente")!\033[0m" || echo -e "\e[1;31m $(source trans -b es:${id} "Falla al Agregar Apodo")!\033[0m"
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
@@ -166,9 +166,9 @@ echo -e "$barra"
 echo -e "${cor[5]} $(source trans -b pt:${id} "INSTALADOR ADM-SCRIPTS") ®"
 echo -e "$barra"
 echo -e "${cor[3]} $(source trans -b pt:${id} "Iniciando Instalação...")"
-add_nick
 echo -e "$barra"
 echo -ne "${cor[4]}"
 #wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
 wget -O lista ${GitRaw}/${GitUser}/main/Install/lista -o /dev/null
 valid_fun
+add_nick
