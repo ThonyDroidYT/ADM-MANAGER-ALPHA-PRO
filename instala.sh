@@ -27,19 +27,20 @@ while true; do
 done
 echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 }
-
-instalar_fun () {
+add_nick () {
 [[ -e /etc/adm-lite/nick ]] && rm /etc/adm-lite/nick
-echo -e "${cor[5]} $(source trans -b pt:${id} "Desea agregar un Nickname?")"
+echo -e "${cor[5]} $(source trans -b pt:${id} "Desea agregar un Apodo?")"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
-echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Nickname de 06-08 Caracteres Recomendados")"
+echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
 read -p "Nick: 》" nick
 echo -e "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
-echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Nickname")!"
+echo -e "${cor[4]} $(source trans -b pt:$id "Ningún Apodo Escrito")!"
 fi
+}
+instalar_fun () {
 cd /etc/adm-lite && bash cabecalho --instalar
 }
 
@@ -163,6 +164,7 @@ echo -e "$barra"
 echo -e "${cor[5]} $(source trans -b pt:${id} "INSTALADOR ADM-SCRIPTS") ®"
 echo -e "$barra"
 echo -e "${cor[3]} $(source trans -b pt:${id} "Iniciando Instalação...")"
+add_nick
 echo -e "$barra"
 echo -ne "${cor[4]}"
 #wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
