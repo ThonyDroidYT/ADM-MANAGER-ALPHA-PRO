@@ -41,7 +41,6 @@ chmod x+ /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
 echo -e "${cor[4]} $(source trans -b es:$id "Ningún Apodo Agregado")!"
 fi
-valid_fun
 }
 instalar_fun () {
 cd /etc/adm-lite && bash cabecalho --instalar
@@ -172,4 +171,4 @@ echo -e "$barra"
 echo -ne "${cor[4]}"
 #wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
 wget -O lista ${GitRaw}/${GitUser}/main/Install/lista -o /dev/null
-#valid_fun
+valid_fun
