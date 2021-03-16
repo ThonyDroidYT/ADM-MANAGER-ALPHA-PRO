@@ -141,7 +141,6 @@ id="fr"
 id="pt"
 ;;
 esac
-wget -O /etc/adm-lite/idioma ${GitRaw}/${GitUser}/main/Install/Idioma/${id}/idioma &> /dev/null
 echo -e "$barra"
 echo -e "${cor[5]} $(source trans -b pt:${id} "INSTALADOR ADM-SCRIPTS") ®"
 echo -e "$barra"
