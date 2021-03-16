@@ -116,7 +116,8 @@ cd $HOME
 locale-gen en_US.UTF-8 > /dev/null 2>&1
 update-locale LANG=en_US.UTF-8 > /dev/null 2>&1
 apt-get install gawk -y > /dev/null 2>&1
-wget -O trans https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/trans -o /dev/null 2>&1
+#wget -O trans https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/trans -o /dev/null 2>&1
+wget -O trans https://git.io/trans &> /dev/null
 mv -f ./trans /bin/ && chmod 777 /bin/*
 clear
 echo -e "$barra"
