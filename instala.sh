@@ -96,6 +96,7 @@ chmod +x ./*
 instalar_fun
 function_verify
 [[ -e $HOME/lista ]] && rm $HOME/lista
+add_nick
 echo -e "$barra"
 echo -e "${cor[5]} $(source trans -b pt:${id} "Perfeito Procedimento Feito com Sucesso!")"
 echo -e "$barra"
@@ -171,4 +172,3 @@ echo -ne "${cor[4]}"
 #wget -O lista https://raw.githubusercontent.com/AAAAAEXQOSyIpN2JZ0ehUQ/ADM-MANAGER-ALPHA/main/Install/lista -o /dev/null
 wget -O lista ${GitRaw}/${GitUser}/main/Install/lista -o /dev/null
 valid_fun
-add_nick
