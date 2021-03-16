@@ -33,6 +33,14 @@ rm $HOME/fim
 instalar_fun () {
 cor[2]="\033[1;37m"
 text=$(source trans -b pt:${id} "Instalando")
+#New
+echo -e "${cor[2]} $text Figlet"
+fun_bar 'apt-get install figlet'
+echo -e "${cor[2]} $text Lolcat"
+fun_bar 'apt-get install lolcat'
+echo -e "${cor[2]} $text Cowsay"
+fun_bar 'apt-get install cowsay'
+#Fin
 echo -e "${cor[2]} $text Curl"
 fun_bar 'apt-get install screen' 'apt-get install python'
 echo -e "${cor[2]} $text Nmap"
@@ -49,6 +57,9 @@ echo -e "${cor[2]} $text Apache2"
 fun_bar 'apt-get install lynx' 'apt-get install curl'
 sed -i "s;Listen 80;Listen 81;g" /etc/apache2/ports.conf
 service apache2 restart > /dev/null 2>&1
+echo -e "${cor[2}$(fun_trans "Agrega Un Nick")"
+read -p "[S/N]: 》" nick
+[[ "$nick" = @(s|S|y|Y) ]] && echo -e "$nick" >> /etc/adm-lite/nick && chmod 777 /etc/adm-lite/nick
 }
     [[ "$1" = "--instalar" ]] && {
     instalar_fun
@@ -685,9 +696,10 @@ var_number="$1"
 fi
 }
 #New
-echo -e "${cor[1]} =================================== ${cor[0]}"
+[[ -e "/etc/adm-lite/nick" ]] && echo -e "${cor[1]} =================================== ${cor[0]}"
 #Mensaje
-echo -e "${cor[1]} =================================== ${cor[0]}"
+[[ -e "/etc/adm-lite/nick" ]] && figlet -p -f smslant < /etc/adm-lite/nick | lolcat
+[[ -e "/etc/adm-lite/nick" ]] && echo -e "${cor[1]} =================================== ${cor[0]}"
 #Fin
 [[ $v1 = $v2 ]] && vesaoSCT="\033[1;32m${txt[315]}" || vesaoSCT="\033[1;31m${txt[316]}"
 credit=$(cat ./menu_credito)
