@@ -29,11 +29,11 @@ echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 }
 
 instalar_fun () {
-[[ -e /etc/adm-lite/Nick ]] && rm /etc/adm-lite/nick
-echo -e "${cor[2} $(source trans -b pt:$id "Agregar Un Nickname")?"
+[[ -e /etc/adm-lite/nick ]] && rm /etc/adm-lite/nick
+echo -e "${cor[5]} $(source trans -b pt:${id} "Desea agregar un Nickname?")"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
-echo -e "${cor[2]} $(source trans -b pt:${id} "De 06-08 Coracteres Recomendados")"
+echo -e "${cor[5]} $(source trans -b pt:${id} "Ingrese su Nickname de 06-08 Caracteres Recomendados")"
 read -p "Nick: 》" nick
 echo -e "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
