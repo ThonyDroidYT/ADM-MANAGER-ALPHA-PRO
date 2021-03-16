@@ -39,7 +39,6 @@ echo -e "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
 echo -e "${cor[4]} $(source trans -b pt:${id} "Ningún Nickname")"
-exit 0
 fi
 cd /etc/adm-lite && bash cabecalho --instalar
 }
@@ -134,7 +133,7 @@ wget -O trans https://git.io/trans &> /dev/null
 mv -f ./trans /bin/ && chmod 777 /bin/*
 clear
 echo -e "$barra"
-echo -e "${cor[2]}[ ADM - MANAGER - ULTIMATE ]" && echo -e "${cor[1]} \n$barra \n${cor[2]}[1]-PORTUGUESE-BR\n[2]-ENGLISH\n[3]-SPANISH\n[4]-FRANCH\n[5]-GERMAN\n[6]-ITALIAN\e[0m"
+echo -e "${cor[2]}[ ADM - MANAGER - ULTIMATE ] \033[0m" && echo -e "${cor[1]} \n$barra \n${cor[2]}[1]-PORTUGUESE-BR\n[2]-ENGLISH\n[3]-SPANISH\n[4]-FRANCH\n[5]-GERMAN\n[6]-ITALIAN\e[0m"
 echo -e "$barra"
 echo -ne " OPCION: "; read lang
 case $lang in
