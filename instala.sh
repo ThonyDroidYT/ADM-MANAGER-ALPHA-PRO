@@ -29,7 +29,7 @@ echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 }
 add_nick () {
 [[ -e /etc/adm-lite/nick ]] && rm /etc/adm-lite/nick
-echo -e "${barra}"
+#echo -e "$barra"
 echo -e "${cor[5]} $(source trans -b es:${id} "Desea agregar un Apodo?")"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
