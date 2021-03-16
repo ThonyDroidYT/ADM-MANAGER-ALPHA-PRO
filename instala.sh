@@ -35,7 +35,7 @@ read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[5]} $(source trans -b es:${id} "Ingrese su Apodo de 06-08 Caracteres Recomendados")"
 read -p " Nick: 》" nick
-echo -e "${cor[4]} $(source trans -b es:${id} "Apodo $(cat /etc/adm-lite/Nick) correctamente agregado")!\033[0m"
+echo -e "${cor[4]} $(source trans -b es:${id} "Apodo $(cat /etc/adm-lite/nick) correctamente agregado")!\033[0m"
 echo "$nick" >> /etc/adm-lite/nick
 chmod 777 /etc/adm-lite/nick
 elif [[ "$addnick" = "n" ]] || [[ "$addnick" = "N" ]]; then
