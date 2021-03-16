@@ -122,7 +122,12 @@ wget -O trans https://git.io/trans &> /dev/null
 mv -f ./trans /bin/ && chmod 777 /bin/*
 clear
 echo -e "$barra"
-echo -e "${cor[2]}[ ADM - MANAGER - ULTIMATE ] \n$barra \n${cor[2]}[1]-PORTUGUESE-BR\n[2]-ENGLISH\n[3]-ESPANISH\n[4]-FRANCH"
+echo -e "${cor[2]}[ ADM - MANAGER - ULTIMATE ] \n$barra \n${cor[2]}[1]-PORTUGUESE-BR\n[2]-ENGLISH\n[3]-SPANISH\n[4]-FRANCH\n[5]-GERMAN\n[6]-ITALIAN\e[0m"
+
+
+idioma[3]="de German"
+idioma[4]="it Italian"
+
 echo -e "$barra"
 echo -ne " OPCION: "; read lang
 case $lang in
@@ -138,8 +143,14 @@ id="es"
 4)
 id="fr"
 ;;
+5)
+id="de"
+;;
+6)
+id="it"
+;;
 *)
-id="pt"
+id="es"
 ;;
 esac
 echo -e "$barra"
