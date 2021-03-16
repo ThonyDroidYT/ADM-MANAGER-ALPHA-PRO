@@ -684,7 +684,11 @@ else
 var_number="$1"
 fi
 }
-
+#New
+echo -e "${cor[1]} =================================== ${cor[0]}"
+#Mensaje
+echo -e "${cor[1]} =================================== ${cor[0]}"
+#Fin
 [[ $v1 = $v2 ]] && vesaoSCT="\033[1;32m${txt[315]}" || vesaoSCT="\033[1;31m${txt[316]}"
 credit=$(cat ./menu_credito)
 echo -e "${cor[1]} =================================== ${cor[0]}"
