@@ -30,7 +30,7 @@ echo -e "\033[1;33m]\033[1;31m -\033[1;32m 100%\033[1;37m"
 
 instalar_fun () {
 [[ -e /etc/adm-lite/Nick ]] && rm /etc/adm-lite/nick
-echo -e "${cor[2} $(source trans -b pt:${id} "Agregar Un Nickname")?"
+echo -e "${cor[2} $(source trans -b pt:$id "Agregar Un Nickname")?"
 read -p " [ s / n ]: " addnick
 if [[ "$addnick" = "s" ]] || [[ "$addnick" = "S" ]]; then
 echo -e "${cor[2]} $(source trans -b pt:${id} "De 06-08 Coracteres Recomendados")"
