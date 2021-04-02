@@ -1008,6 +1008,40 @@ echo -e "$barra"
    }
 }
 
+install_v2ray () {
+source <(curl -sL https://multi.netlify.app/v2ray.sh)
+echo -e "${cor[2]}$(fun_trans "V2ray Instalado con Éxito")"
+}
+unistall_v2ray () {
+source <(curl -sL https://multi.netlify.app/v2ray.sh) --remove
+echo -e "${cor[2]}$(fun_trans "V2ray Desinstalado con Éxito")"
+}
+
+v2ray_main () {
+echo -e "${barra}"
+echo -e "${cor[2]}$(fun_trans "V2RAY ADM-MANAGER-ALPHA-PRO")"
+echo -e "${barra}"
+echo -e "${cor[2]} |0| > ${cor[3]}$(fun_trans "Salir")"
+echo -e "${cor[2]} |1| > ${cor[3]}$(fun_trans "Instalar V2ray")"
+echo -e "${cor[2]} |2| > ${cor[3]}$(fun_trans "Desinstalar V2ray")"
+echo -e "${barra}"
+echo -ne "\033[1;37m $(fun_trans "Selecione Uma Opcao"): " && read option
+case $option in
+0)
+clear
+exit
+read -p " Enter";;
+1)
+install_v2ray
+read -p " Enter";;
+2)
+unistall_v2ray
+read -p " Enter";;
+3)
+read -p " Enter";;
+esac
+}
+
 varxyz=$(mportas)
 echo -e "$barra"
 echo -e " $(fun_trans "Portas Ativas No Momento!")"
@@ -1024,6 +1058,9 @@ unset telegran
 unset socks
 unset gettun
 unset tcpbypass
+unset tcpbypass
+unset painel
+unset v2ray
 [[ -e /etc/squid/squid.conf ]] && squid="\033[1;32m$(fun_trans "Online")"
 [[ -e /etc/squid3/squid.conf ]] && squid="\033[1;32m$(fun_trans "Online")"
 [[ -e /etc/default/dropbear ]] && dropbear="\033[1;32m$(fun_trans "Online")"
@@ -1034,6 +1071,9 @@ unset tcpbypass
 [[ -e /etc/adm-lite/sockson ]] && socks="\033[1;32m$(fun_trans "Online")"
 [[ -e /etc/adm-lite/gettun ]] && gettun="\033[1;32m$(fun_trans "Online")"
 [[ -e /etc/adm-lite/edbypass ]] && tcpbypass="\033[1;32m$(fun_trans "Online")"
+#New
+[[ -e /etc/v2ray/config.json ]] && painel="\033[1;32m$(fun_trans "Online")" || painel="\033[1;32m$(fun_trans "Offline")"
+[[ -e /etc/v2ray/config.json ]] && v2ray="\033[1;32m$(fun_trans "Online")" || v2ray="\033[1;32m$(fun_trans "Offline")"
 echo -e "$barra"
 echo -e "\033[1;31m $(fun_trans "MENU INSTALAÃÃO")"
 echo -e "$barra"
@@ -1047,6 +1087,8 @@ echo -e "${cor[2]} |6| >${cor[3]} $(fun_trans "CONFIGURAR") PROXY SOCKS $socks"
 echo -e "${cor[2]} |7| >${cor[3]} $(fun_trans "CONFIGURAR") PROXY GETTUNEL $gettun"
 echo -e "${cor[2]} |8| >${cor[3]} $(fun_trans "CONFIGURAR") TCP OVER BYPASS $tcpbypass"
 echo -e "${cor[2]} |9| >${cor[3]} $(fun_trans "CONFIGURAR") TELEGRAN MANAGER BOT $telegran"
+echo -e "${cor[2]} |10| >${cor[3]} $(fun_trans "CONFIGURAR") PAINEL UPLOAD $painel"
+echo -e "${cor[2]} |11| >${cor[3]} $(fun_trans "CONFIGURAR") V2RAY $v2ray"
 echo -e "$barra"
 echo -ne "\033[1;37m $(fun_trans "Selecione Uma Opcao"): "
 read optons
@@ -1080,6 +1122,9 @@ telegran_bot
 read -p " Enter";;
 10)
 painel_upload
+read -p " Enter";;
+11)
+v2ray_main
 read -p " Enter";;
 esac
 
